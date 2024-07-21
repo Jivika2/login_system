@@ -1,0 +1,16 @@
+<body>
+  <div class="text-center mt-5">
+    {% if user.is_authenticated %}
+    <h1 class="text-success font">
+      <b>You are successfully logged in</b>
+    </h1>
+    <a class="btn btn-danger font" href="/logout/">
+      <b>Logout</b></a>
+      {%else%}
+      <h1 class="text-success font">
+        <b> You are on Unauthorized User</b></h1>
+        <a class="btn btn-danger font" href="/login/"><b>Login</b></a>
+
+        {%endif%}
+      </div>
+    </body>

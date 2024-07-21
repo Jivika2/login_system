@@ -1,0 +1,35 @@
+<body>
+  <div class="text-center mt-5">
+      <h3 class="text-info font"><b>Update Profile</b></h3><br>
+      <p>{% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+              <small class="text-danger font"><b>{{ error }}</b></small>
+          {% endfor %}
+      {% endif %}</p>
+  
+      <form method="post" novalidate>
+          {% csrf_token %}
+          <div>
+              <span class="text-danger font"><b>{{ form.username.errors }}</b></span>
+              <span class="font"><b>{{ form.username.label }}</b></span> {{ form.username }}
+          </div>
+          <br>
+          <div>
+              <span class="text-danger font"><b>{{ form.email.errors }}</b></span>
+              <span class="font"><b>{{ form.email.label }}</b></span> {{ form.email }}
+          </div>
+          <br>
+          <div>
+              <span class="text-danger font"><b>{{ form.first_name.errors }}</b></span>
+              <span class="font"><b>{{ form.first_name.label }}</b></span> {{ form.first_name }}
+          </div>
+          <br>
+          <div>
+              <span class="text-danger font"><b>{{ form.last_name.errors }}</b></span>
+              <span class="font"><b>{{ form.last_name.label }}</b></span> {{ form.last_name }}
+          </div>
+          <br>
+          <button class="font btn btn-info"><b>Update Profile</b></button>
+      </form>
+  </div>
+  </body>
